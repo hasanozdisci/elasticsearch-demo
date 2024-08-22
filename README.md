@@ -40,7 +40,7 @@ To set up Elasticsearch using Docker, you can follow these steps:
 1. Pull the Elasticsearch Docker image:
 
    ```bash
-   docker pull docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+   docker pull docker.elastic.co/elasticsearch/elasticsearch:8.15.0
    ```
 
 2. Create a Docker network:
