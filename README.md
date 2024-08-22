@@ -65,6 +65,4 @@ To set up Elasticsearch using Docker, you can follow these steps:
 
    You should see a JSON response indicating the Elasticsearch version and other details.
 
-Now you have Elasticsearch running in a Docker container. You can proceed with configuring and using it in your .NET Core Web API.
-
 
