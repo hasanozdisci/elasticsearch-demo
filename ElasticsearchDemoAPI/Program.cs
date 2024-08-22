@@ -1,6 +1,7 @@
 
 
 using ElasticsearchDemoAPI.Data;
+using ElasticsearchDemoAPI.Mappings;
 using ElasticsearchDemoAPI.Services;
 using ElasticsearchDemoAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,9 @@ namespace ElasticsearchDemoAPI
 				return new ElasticClient(settings);
 			});
 			builder.Services.AddScoped<ISearchService, ElasticsearchService>();
+
+			// automapper configuration
+			builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 			var app = builder.Build();
 

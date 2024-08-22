@@ -4,9 +4,9 @@ namespace ElasticsearchDemoAPI.Services.Interfaces
 {
 	public interface ISearchService
 	{
-		Task<IEnumerable<Article>> SearchAsync(string query);
-		Task IndexArticleAsync(Article article);
-		Task UpdateArticleAsync(Article article);
+		Task<IEnumerable<ArticleDTO>> SearchAsync(string query);
+		Task IndexArticleAsync(ArticleDTO article);
+		Task UpdateArticleAsync(ArticleDTO article);
 		Task DeleteArticleAsync(int id);
 	}
 }

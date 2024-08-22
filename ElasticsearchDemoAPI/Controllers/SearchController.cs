@@ -16,25 +16,25 @@ namespace ElasticsearchDemoAPI.Controllers
 			_searchService = searchService;
 		}
 
-		[HttpGet("{query}")]
-		public async Task<IActionResult> Search(string query)
+		[HttpPost]
+		public async Task<IActionResult> AddArticle([FromBody] ArticleDTO articleDTO)
 		{
-			var results = await _searchService.SearchAsync(query);
-			return Ok(results);
+			await _searchService.IndexArticleAsync(articleDTO);
+			return Ok("Article indexed successfully");
 		}
 
-		[HttpPost]
-		public async Task<IActionResult> Index([FromBody] Article article)
+		[HttpGet("search/{query}")]
+		public async Task<IActionResult> SearchArticles(string query)
 		{
-			await _searchService.IndexArticleAsync(article);
-			return Ok();
+			var articles = await _searchService.SearchAsync(query);
+			return Ok(articles);
 		}
 
 		[HttpPut("{id}")]
-		public async Task<IActionResult> UpdateArticle(int id, [FromBody] Article article)
+		public async Task<IActionResult> UpdateArticle(int id, [FromBody] ArticleDTO articleDTO)
 		{
-			article.Id = id; // Ensure the article ID is set correctly
-			await _searchService.UpdateArticleAsync(article);
+			articleDTO.Id = id;
+			await _searchService.UpdateArticleAsync(articleDTO);
 			return Ok("Article updated successfully");
 		}
 
