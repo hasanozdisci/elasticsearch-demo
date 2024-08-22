@@ -30,12 +30,12 @@ namespace ElasticsearchDemoAPI.Services
 
 		public async Task IndexArticleAsync(Article article)
 		{
-			var response = await _elasticClient.IndexDocumentAsync(article);
+			await _elasticClient.IndexDocumentAsync(article);
 		}
 
 		public async Task UpdateArticleAsync(Article article)
 		{
-			var response = await _elasticClient.UpdateAsync<Article>(article.Id, u => u
+			await _elasticClient.UpdateAsync<Article>(article.Id, u => u
 				.Index("articles")
 				.Doc(article) // The updated article document
 			);
@@ -43,7 +43,7 @@ namespace ElasticsearchDemoAPI.Services
 
 		public async Task DeleteArticleAsync(int id)
 		{
-			var response = await _elasticClient.DeleteAsync<Article>(id, d => d
+			await _elasticClient.DeleteAsync<Article>(id, d => d
 				.Index("articles")
 			);
 		}
