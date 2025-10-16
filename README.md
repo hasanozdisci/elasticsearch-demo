@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a .NET Core Web API that integrates with Elasticsearch to manage and search articles. The API provides endpoints to create, read, update, delete, and search articles using Elasticsearch, allowing for efficient full-text search and real-time indexing.
+This project is a .NET Core Web API that integrates with Elasticsearch to manage and search articles. The API provides endpoints to create, read, update, delete, and search articles using Elasticsearch, allowing for efficient full-text search and real-time indexing..
 
 ## Features
 
