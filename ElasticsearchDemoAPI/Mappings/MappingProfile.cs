@@ -8,6 +8,6 @@ namespace ElasticsearchDemoAPI.Mappings
 		public MappingProfile()
 		{
 			CreateMap<Article, ArticleDTO>().ReverseMap();
-		}
+		
 	}
 }
